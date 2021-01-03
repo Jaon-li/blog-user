@@ -7,6 +7,7 @@ import com.blog.base.userApi.request.RestPwdEntity;
 import com.blog.base.userApi.request.UserInfoEntity;
 import com.blog.base.userApi.response.BaseResponse;
 import com.blog.base.userApi.response.UserInfo;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,7 +28,7 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public BaseResponse<UserInfo> login(LoginEntity loginEntity) {
+    public BaseResponse<UserInfo> login(@RequestBody LoginEntity loginEntity) {
         return null;
     }
 
@@ -37,12 +38,12 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public BaseResponse<Boolean> updateUserInfo(UserInfoEntity userInfoEntity) {
+    public BaseResponse<Boolean> updateUserInfo(@RequestBody UserInfoEntity userInfoEntity) {
         return null;
     }
 
     @Override
-    public BaseResponse<Boolean> resetPwd(RestPwdEntity restPwdEntity) {
+    public BaseResponse<Boolean> resetPwd(@RequestBody RestPwdEntity restPwdEntity) {
         return null;
     }
 
@@ -55,4 +56,5 @@ public class UserController implements UserApi {
     public BaseResponse<Boolean> DestroyUser(String s) {
         return null;
     }
+
 }
