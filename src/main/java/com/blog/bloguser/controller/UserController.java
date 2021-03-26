@@ -10,8 +10,9 @@ import com.blog.base.userApi.response.UserInfo;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/api/user/")
 public class UserController implements UserApi {
+
     @Override
     public BaseResponse<UserInfo> register(RegisterEntity registerEntity) {
         return null;
