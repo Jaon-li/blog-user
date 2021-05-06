@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @MapperScan("com.blog.bloguser.mapper")
-@NacosConfigurationProperties(dataId = "user-service", autoRefreshed = true)
 @EnableSwagger2
 @Import({
         com.blog.base.emailApi.config.Config.class,
