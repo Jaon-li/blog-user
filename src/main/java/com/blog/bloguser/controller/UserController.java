@@ -1,18 +1,19 @@
 package com.blog.bloguser.controller;
 
+import com.blog.base.response.BaseResponse;
 import com.blog.base.userApi.api.UserApi;
 import com.blog.base.userApi.request.LoginEntity;
 import com.blog.base.userApi.request.RegisterEntity;
 import com.blog.base.userApi.request.RestPwdEntity;
 import com.blog.base.userApi.request.UserInfoEntity;
-import com.blog.base.userApi.response.BaseResponse;
 import com.blog.base.userApi.response.UserInfo;
 import com.blog.bloguser.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/api/user/")
+@Api("用户注册")
 public class UserController implements UserApi {
 
     @Autowired
@@ -20,7 +21,7 @@ public class UserController implements UserApi {
 
     @Override
     public BaseResponse<UserInfo> register(RegisterEntity registerEntity) {
-        return null;
+        return BaseResponse.ok(userService.register(registerEntity));
     }
 
     @Override
