@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface UserService {
 
-  public UserInfo register(RegisterEntity registerEntity);
+    UserInfo register(RegisterEntity registerEntity);
 
-  public String imgCode(String s);
+    String imgCode(String s);
 
-  public String emailCode(String s);
+    String emailCode(String email);
 
-  public UserInfo login(@RequestBody LoginEntity loginEntity);
+    UserInfo login(@RequestBody LoginEntity loginEntity);
 
-  public UserInfo getUserInfo(String s);
+    UserInfo getUserInfo(String s);
 
-  public Boolean updateUserInfo(@RequestBody UserInfoEntity userInfoEntity);
+    Boolean updateUserInfo(@RequestBody UserInfoEntity userInfoEntity);
 
-  public Boolean resetPwd(@RequestBody RestPwdEntity restPwdEntity);
+    Boolean resetPwd(@RequestBody RestPwdEntity restPwdEntity);
 
-  public Boolean Logout(String s);
+    Boolean Logout(String s);
 
-  public Boolean DestroyUser(String s);
+    Boolean DestroyUser(String s);
 
 }

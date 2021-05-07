@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-//    @Autowired
-//    private EmailApi emailApi;
+    @Autowired
+    private EmailApi emailApi;
 
     /**
      * 用户注册
@@ -65,13 +65,13 @@ public class UserServiceImpl implements UserService {
     public String emailCode(String email) {
         EmailContentEntity emailContentEntity = new EmailContentEntity();
         emailContentEntity.setEmails(new ArrayList<String>() {{
-            add("zerofire.li@qq.con");
+            add("zerofire.li@qq.com");
         }});
         emailContentEntity.setTitle("测试验证码");
         emailContentEntity.setContent("内容就是没有内容");
         emailContentEntity.setEnclosureList(null);
-//        BaseResponse<Boolean> send = emailApi.send(emailContentEntity);
-//        log.info("fanhiu:{}", send);
+        BaseResponse<Boolean> send = emailApi.send(emailContentEntity);
+        log.info("fanhiu:{}", send);
         return null;
     }
 

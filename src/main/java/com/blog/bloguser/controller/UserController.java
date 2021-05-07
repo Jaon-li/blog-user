@@ -9,11 +9,16 @@ import com.blog.base.userApi.request.UserInfoEntity;
 import com.blog.base.userApi.response.UserInfo;
 import com.blog.bloguser.service.UserService;
 import io.swagger.annotations.Api;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Api("用户注册")
+@RestController
+@RequestMapping("/api/user/")
 public class UserController implements UserApi {
 
     @Autowired
@@ -30,8 +35,8 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public BaseResponse<String> emailCode(String s) {
-        return null;
+    public BaseResponse<String> emailCode(@RequestParam("email") String email) {
+        return BaseResponse.ok(userService.emailCode(email));
     }
 
     @Override
