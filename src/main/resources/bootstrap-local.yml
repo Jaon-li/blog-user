@@ -18,3 +18,11 @@ spring:
       transport:
         port: 8719
         dashboard: http://fcdc.vip:9999
+
+logging:
+  level:
+    com.blog.bloguser.mapper: debug
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
